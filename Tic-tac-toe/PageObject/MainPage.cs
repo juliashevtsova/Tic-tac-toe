@@ -20,6 +20,8 @@ namespace Tic_tac_toe.PageObject
         private static readonly By _squareBottomRight = By.CssSelector("[class='square bottom right']");
         private static readonly By _scoreButton = By.CssSelector("[class^=scores]");
         private static readonly By _playersNumber = By.CssSelector("[class^=swap]");
+        private static readonly By _neaveInteractiveButton = By.CssSelector("a[class^= neave]");
+        private static readonly By _soundButton = By.CssSelector("div.mute");
 
         public MainPage(IWebDriver webDriver)
         {
@@ -41,14 +43,17 @@ namespace Tic_tac_toe.PageObject
             _webDriver.FindElement(_scoreButton);
             return this;
         }
-
-        public void InputSquareTopLeft()
+        public void ClickNeaveInteractiveButton()
         {
-            _webDriver.FindElement(_squareTopLeft).Click();
+            _webDriver.FindElement(_neaveInteractiveButton).Click();
         }
         public void InputSquareTop()
         {
             _webDriver.FindElement(_squareTop).Click();
+        }
+        public void InputSquareTopLeft()
+        {
+            _webDriver.FindElement(_squareTopLeft).Click();
         }
         public void InputSquareTopRight()
         {
@@ -77,8 +82,12 @@ namespace Tic_tac_toe.PageObject
         public void InputSquareBottomRight()
         {
             _webDriver.FindElement(_squareBottomRight).Click();
-        }       
-       
+        }
+        public void ClickSoundButton()
+        {
+            _webDriver.FindElement(_soundButton).Click();
+        }
+
     }
 }
 
