@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Tic_tac_toe.PageObject
+namespace PageObject
 {
-    class MainPage
+    public class MainPage
     {
         private readonly IWebDriver _webDriver;
 
@@ -17,8 +17,7 @@ namespace Tic_tac_toe.PageObject
         private static readonly By _squareRight = By.CssSelector("[class='square right']");
         private static readonly By _squareBottomLeft = By.CssSelector("[class='square bottom left']");
         private static readonly By _squareBottom = By.CssSelector("[class='square bottom']");
-        private static readonly By _squareBottomRight = By.CssSelector("[class='square bottom right']");
-        private static readonly By _scoreButton = By.CssSelector("[class^=scores]");
+        private static readonly By _squareBottomRight = By.CssSelector("[class='square bottom right']");        
         private static readonly By _playersNumber = By.CssSelector("[class^=swap]");
         private static readonly By _neaveInteractiveButton = By.CssSelector("a[class^= neave]");
         private static readonly By _soundButton = By.CssSelector("div.mute");
@@ -36,11 +35,6 @@ namespace Tic_tac_toe.PageObject
         public MainPage ChangePayersNumber()
         {
             _webDriver.FindElement(_playersNumber).Click();
-            return this;
-        }
-        public MainPage ChangeScoreNumber()
-        {
-            _webDriver.FindElement(_scoreButton);
             return this;
         }
         public void ClickNeaveInteractiveButton()
